@@ -509,6 +509,63 @@
             padding-top: 2rem;
         }
 
+		/* ==========================================================================
+           GIANT CARTOONISH WATERMARK LETTERS
+           ========================================================================== */
+        .watermark {
+            position: absolute;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            color: transparent; /* Makes the inside of the letter completely clear */
+            pointer-events: none; /* Crucial: makes them click-through so they don't block buttons */
+            user-select: none; /* Prevents users from accidentally highlighting them */
+            z-index: 0; /* Keeps them safely behind your text and images */
+        }
+
+        /* "a" - Floating Top Left (Cyan) */
+        .wm-a {
+            top: 12%;
+            left: -5%;
+            font-size: 28rem;
+            transform: rotate(-15deg);
+            -webkit-text-stroke: 6px rgba(0, 180, 216, 0.04); /* Ultra-faded 4% opacity cyan */
+        }
+
+        /* "b" - Floating Mid Right (Pink) */
+        .wm-b {
+            top: 35%;
+            right: -8%;
+            font-size: 32rem;
+            transform: rotate(20deg);
+            -webkit-text-stroke: 6px rgba(224, 33, 138, 0.04); /* Ultra-faded 4% opacity pink */
+        }
+
+        /* "c" - Floating Lower Left (Orange) */
+        .wm-c {
+            top: 60%;
+            left: -10%;
+            font-size: 30rem;
+            transform: rotate(-25deg);
+            -webkit-text-stroke: 6px rgba(247, 127, 0, 0.04); /* Ultra-faded 4% opacity orange */
+        }
+
+        /* "d" - Floating Near Footer (Purple) */
+        .wm-d {
+            top: 82%;
+            right: -6%;
+            font-size: 35rem;
+            transform: rotate(15deg);
+            -webkit-text-stroke: 6px rgba(111, 45, 189, 0.04); /* Ultra-faded 4% opacity purple */
+        }
+
+        /* RESPONSIVE: Scale down their sizes on mobile so they don't overpower small screens */
+        @media (max-width: 768px) {
+            .wm-a { font-size: 15rem; left: -10%; }
+            .wm-b { font-size: 18rem; right: -15%; }
+            .wm-c { font-size: 16rem; left: -15%; }
+            .wm-d { font-size: 20rem; right: -12%; }
+        }
+
         /* RESPONSIVE LAYOUT */
         @media (max-width: 900px) {
             header { flex-direction: column; gap: 1.5rem; text-align: center; }
@@ -667,6 +724,11 @@
 </head>
 <body>
 <div class="page-wrapper">
+	<!-- GIANT FLOATING BACKGROUND WATERMARKS -->
+    <div class="watermark wm-a">a</div>
+    <div class="watermark wm-b">b</div>
+    <div class="watermark wm-c">c</div>
+    <div class="watermark wm-d">d</div>
     <!-- Header Navigation Section -->
     <header>
         <!-- Logo & Tagline Wrapper Container -->
