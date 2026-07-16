@@ -146,7 +146,7 @@
         /* RESPONSIVE CONTROL: Hide tagline on smaller mobile screens */
         @media (max-width: 900px) {
             .logo-tagline {
-                display: none;
+                /*display: none;*/
             }
         }
 
@@ -655,6 +655,12 @@
         margin-top: 1rem;
         border-bottom: none !important;
         padding: 0.8rem !important;
+    }
+	.logo-tagline {
+        font-size: 0.65rem !important; /* Makes it small enough to stay on one line */
+        gap: 0.2rem !important;
+        border-left: none !important; /* Removes the divider line if space is tight */
+        padding-left: 0 !important;
     }
 }
     </style>
