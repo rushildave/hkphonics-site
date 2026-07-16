@@ -486,11 +486,19 @@
    ========================================================================== */
 @media (max-width: 1024px) {
     /* Scale down logo container on smaller screens */
-    header { 
-        padding: 0.8rem 5%; 
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1000; /* Puts the header bar above the page content wrapper layout elements */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 5%;
+        background: #ffffff;
     }
     .logo-img {
-        height: 75px; 
+        height: 120px;
+		width: 180px;
     }
     .logo-text {
         font-size: 0.95rem;
@@ -499,16 +507,16 @@
 
     /* Reveal the interactive Hamburger Button */
     .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 6px;
-            cursor: pointer;
-            border: none;
-            background: transparent;
-            padding: 4px;
-            z-index: 2000; /* Increased to stay on top of the menu drawer */
-            position: relative;
-        }
+        display: flex !important; /* Forces the menu button display element to be active on mobile */
+        flex-direction: column;
+        gap: 6px;
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        padding: 10px; /* Expands the clickable tap zone for easier thumb access */
+        position: relative;
+        z-index: 2005; /* Ensures it sits higher than the sliding drawer (which is 1001) */
+    }
 
     .hamburger span {
         display: block;
