@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<!-- Add Quicksand Rounded Font to <head> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -74,29 +78,76 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
         
-        .logo-container {
+        /* BRAND TEXT & RIGHT-SIDE LOGO STYLING */
+        .brand-container {
             display: flex;
-            align-items: center; 
-            gap: 15px; /* Generous spacing between logo and text */
+            align-items: center;
+            gap: 12px; /* Smooth spacing between text elements and logo graphic */
         }
 
-        /* Dramatically larger logo area to keep your graphic clear and readable */
+        .logo-text {
+            display: flex;
+            flex-direction: column; /* Stacks HK cleanly above PHONICS */
+            text-decoration: none;
+            font-family: 'Quicksand', sans-serif;
+            line-height: 0.95;
+            text-align: right; /* Aligns text cleanly against the right-side logo */
+        }
+
+        /* "HK" Styling */
+        .logo-top {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .color-cyan { color: #00b4d8; }   
+        .color-purple { color: #6f2dbd; } 
+
+        /* "PHONICS" Styling */
+        .logo-bottom {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #03254c; 
+            letter-spacing: 2px;
+            margin-top: 2px;
+        }
+
+        /* Graphic Logo Wrapper on Right Side */
+        .logo-image-wrap {
+            display: flex;
+            align-items: center;
+            border-right: 2px solid #e0e0e0; /* Clean separation line after the logo graphic */
+            padding-right: 15px; /* Spaces out the divider line from the logo */
+            margin-right: 5px;
+        }
+
         .logo-img {
-            height: 130px;       /* Increased height significantly to show your full logo */
-            width: auto;         /* Crucial: lets the width adjust automatically so it doesn't distort */
+            height: 85px; /* Adjust scale easily here */
+            width: auto;
             object-fit: contain;
         }
 
-        /* Makes the main text sleek, minimalist, and small so it doesn't compete */
-        .logo-text {
-            font-family: var(--font-heading);
-            font-size: 1.1rem;   /* Noticeably smaller to let the graphic shine */
+        /* SIDE TAGLINE CONFIGURATION */
+        .logo-tagline {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 0.95rem;
             font-weight: 600;
-            color: #000000;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border-left: 1px solid #ccc; /* Optional: adds an elegant separator line between logo and text */
-            padding-left: 15px;          /* Space after the separator line */
+            color: #555555; 
+            display: flex;
+            gap: 0.4rem;
+        }
+
+        /* Tagline Colors */
+        .tag-pink { color: #e0218a; font-weight: 700; }
+        .tag-orange { color: #f77f00; font-weight: 700; }
+        .tag-cyan { color: #00b4d8; font-weight: 700; }
+        .tag-blue { color: #0056b3; font-weight: 700; }
+
+        /* RESPONSIVE CONTROL: Hide tagline on smaller mobile screens */
+        @media (max-width: 900px) {
+            .logo-tagline {
+                display: none;
+            }
         }
 
         /* NAVIGATION TASKBAR */
@@ -592,11 +643,30 @@
 <div class="page-wrapper">
     <!-- Header Navigation Section -->
     <header>
-        <div class="logo-container">
-            <!-- Add logo image here if available -->
-            <img class="logo-img" src="favicon.ico" alt="HK Logo" onerror="this.style.display='none'">
-            <div class="logo-text">HK PHONICS</div>
+        <!-- Logo & Tagline Wrapper Container -->
+    <div class="brand-container">
+        <!-- Main Stacked Brand Name Text on Left -->
+        <a href="/" class="logo-text">
+            <span class="logo-top">
+                <span class="color-cyan">H</span>
+                <span class="color-purple">K</span>
+            </span>
+            <span class="logo-bottom">PHONICS</span>
+        </a>
+
+        <!-- Graphic Logo Image on the Right -->
+        <div class="logo-image-wrap">
+            <img class="logo-img" src="favicon.ico" alt="HK Phonics Logo" onerror="this.style.display='none'">
         </div>
+        
+        <!-- Side Tagline (Sits after the logo graphic, before the taskbar) -->
+        <div class="logo-tagline">
+            <span class="tag-pink">Think</span> • 
+            <span class="tag-orange">Decode</span> • 
+            <span class="tag-cyan">Read</span> • 
+            <span class="tag-blue">Succeed</span>
+        </div>
+    </div>
 
     <button class="hamburger" id="hamburgerBtn" style="display: none;" aria-label="Toggle navigation Menu">
         <span></span>
