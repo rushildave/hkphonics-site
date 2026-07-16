@@ -21,7 +21,13 @@
 
     <style>
         /* CSS RESET & VARIABLES */
-        * {
+        *
+		html, body {
+    width: 100%;
+    overflow-x: hidden; /* Blocks horizontal scrolling completely */
+    position: relative;
+}
+		{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -92,11 +98,29 @@
             align-items: center;
         }
 
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            align-items: center;
-        }
+        /* Transform navigation taskbar menu into the hidden sidebar drawer */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Hides it off-screen to the right */
+        width: 280px;
+        height: 100vh;
+        background-color: #ffffff;
+        box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 6rem 2rem 2rem 2rem;
+        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s;
+        z-index: 1001;
+        overflow-y: auto;
+        visibility: hidden; /* ADD THIS: Keeps it invisible to touch swipes when closed */
+    }
+
+    /* Slides the menu out when active */
+    .nav-menu.active {
+        right: 0;
+        visibility: visible; /* ADD THIS: Makes it interactive when active */
+    }
 
         .nav-item {
             position: relative;
