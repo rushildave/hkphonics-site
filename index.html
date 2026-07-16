@@ -299,11 +299,10 @@
             background-color: #fff;
         }
 
-        .gallery-item img, .gallery-item video {
+        .gallery-item video {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            object-fit: cover; /* Keeps video framing completely square within the card grid bounding box */
         }
 
         /* Interactive expansion scale effect on Hover */
@@ -736,17 +735,31 @@ Founder, HK Phonics</p>
 
         <!-- Responsive Hover/Expand Photo & Video Gallery -->
         <section class="gallery-section" id="gallery">
-            <h2 class="gallery-title">Our Media Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item"><img src="photo1.jpg" alt="Learning Activity"></div>
-                <div class="gallery-item"><img src="photo2.jpg" alt="Teacher Training"></div>
-                <div class="gallery-item"><img src="photo3.jpg" alt="Phonics Materials"></div>
-                <!-- Interactive Embedded Video Example -->
-                <div class="gallery-item">
-                    <video src="video1.mp4" poster="photo1.jpg" controls muted loop></video>
-                </div>
-            </div>
-        </section>
+    <h2 class="gallery-title">Our Media Gallery</h2>
+    <div class="gallery-grid">
+        
+        <!-- Video 1 -->
+        <div class="gallery-item">
+            <video src="video1.mp4" controls preload="metadata" muted></video>
+        </div>
+        
+        <!-- Video 2 -->
+        <div class="gallery-item">
+            <video src="video2.mp4" controls preload="metadata" muted></video>
+        </div>
+        
+        <!-- Video 3 -->
+        <div class="gallery-item">
+            <video src="video3.mp4" controls preload="metadata" muted></video>
+        </div>
+        
+        <!-- Video 4 -->
+        <div class="gallery-item">
+            <video src="video4.mp4" controls preload="metadata" muted></video>
+        </div>
+
+    </div>
+</section>
 
         <!-- Admission Contact Registration Form -->
         <section class="contact-section" id="contact">
