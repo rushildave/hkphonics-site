@@ -559,11 +559,98 @@
         }
 
         /* RESPONSIVE: Scale down their sizes on mobile so they don't overpower small screens */
+        .watermark {
+            position: absolute;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            color: transparent; 
+            pointer-events: none; 
+            user-select: none; 
+            z-index: 0; 
+        }
+
+        /* "a" - Upper Left (Matches Cyan brand color) */
+        .wm-a {
+            top: 10%;
+            left: -4%;
+            font-size: 26rem;
+            transform: rotate(-15deg);
+            -webkit-text-stroke: 8px rgba(46, 125, 204, 0.12); /* 12% Cyan */
+        }
+
+        /* "b" - Upper Right (Matches Pink brand color) */
+        .wm-b {
+            top: 22%;
+            right: -6%;
+            font-size: 28rem;
+            transform: rotate(18deg);
+            -webkit-text-stroke: 8px rgba(224, 43, 96, 0.15); /* 15% Pink */
+        }
+
+        /* "c" - Left, near Vision/Philosophy (Matches Warm Orange) */
+        .wm-c {
+            top: 36%;
+            left: -8%;
+            font-size: 25rem;
+            transform: rotate(-20deg);
+            -webkit-text-stroke: 8px rgba(247, 127, 0, 0.12); /* 12% Orange */
+        }
+
+        /* "d" - Right, near Why Phonics (Matches Deep Navy Blue) */
+        .wm-d {
+            top: 48%;
+            right: -5%;
+            font-size: 30rem;
+            transform: rotate(12deg);
+            -webkit-text-stroke: 8px rgba(3, 37, 76, 0.12); /* 12% Navy */
+        }
+
+        /* "e" - Left, near What We Provide (Matches Purple) */
+        .wm-e {
+            top: 60%;
+            left: -6%;
+            font-size: 24rem;
+            transform: rotate(-15deg);
+            -webkit-text-stroke: 8px rgba(111, 45, 189, 0.12); /* 12% Purple */
+        }
+
+        /* "f" - Right, near Founder Section (Matches Deep Pink) */
+        .wm-f {
+            top: 72%;
+            right: -4%;
+            font-size: 28rem;
+            transform: rotate(25deg);
+            -webkit-text-stroke: 8px rgba(224, 43, 96, 0.12); /* 12% Pink */
+        }
+
+        /* "g" - Left, near Gallery (Matches Cyan Blue) */
+        .wm-g {
+            top: 84%;
+            left: -7%;
+            font-size: 26rem;
+            transform: rotate(-10deg);
+            -webkit-text-stroke: 8px rgba(46, 125, 204, 0.12); /* 12% Cyan */
+        }
+
+        /* "h" - Right, near Footer (Matches White/Light Pink contrast) */
+        .wm-h {
+            top: 94%;
+            right: -3%;
+            font-size: 32rem;
+            transform: rotate(15deg);
+            -webkit-text-stroke: 8px rgba(255, 255, 255, 0.25); /* Stronger white outline against the pink footer background */
+        }
+
+        /* RESPONSIVE CONTROL: Scales down the size of the letters on mobile so they fit nicely */
         @media (max-width: 768px) {
-            .wm-a { font-size: 15rem; left: -10%; }
-            .wm-b { font-size: 18rem; right: -15%; }
-            .wm-c { font-size: 16rem; left: -15%; }
-            .wm-d { font-size: 20rem; right: -12%; }
+            .wm-a { font-size: 13rem; left: -8%; }
+            .wm-b { font-size: 14rem; right: -10%; }
+            .wm-c { font-size: 12rem; left: -12%; }
+            .wm-d { font-size: 15rem; right: -8%; }
+            .wm-e { font-size: 13rem; left: -10%; }
+            .wm-f { font-size: 14rem; right: -8%; }
+            .wm-h { font-size: 13rem; left: -10%; }
+            .wm-s { font-size: 16rem; right: -6%; }
         }
 
         /* RESPONSIVE LAYOUT */
@@ -729,6 +816,10 @@
     <div class="watermark wm-b">b</div>
     <div class="watermark wm-c">c</div>
     <div class="watermark wm-d">d</div>
+    <div class="watermark wm-e">e</div>
+    <div class="watermark wm-f">f</div>
+    <div class="watermark wm-h">g</div>
+    <div class="watermark wm-s">h</div>
     <!-- Header Navigation Section -->
     <header>
         <!-- Logo & Tagline Wrapper Container -->
